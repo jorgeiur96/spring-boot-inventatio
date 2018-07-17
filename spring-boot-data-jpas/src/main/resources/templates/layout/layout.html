@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+<meta charset="UTF-8" />
+<title th:text="'Spring  Boot  MVC + thymeleaf +Data Jpa'+${titulo}">Insert title here</title>
+<link rel="stylesheet"
+	th:href="@{/css/bootstrap.min.css}"
+	></link>
+	
+	<link rel="stylesheet"
+	th:href="@{/css/jquery-ui.min.css}"
+	></link>
+</head>
+<body>
+
+	<header th:fragment="header">
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+			<a class="navbar-brand" href="#">Srping Boot</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarExampleDefaul"
+				aria-controls="navbarExampleDefault" aria-expanded="false"
+				aria-label="Taggle Navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item  active"><a class="nav-link" href="#">Home</a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/listar}">Cliente</a></li>
+				</ul>
+
+			</div>
+			
+			<div class="alert alert-success" th:if="${success != null}" th:text="${success}"></div>
+			<div class="alert alert-danger" th:if="${error != null}" th:text="${error}"></div>
+			<div class="alert alert-warning"  th:if="${warning != null}" th:text="${warning}"></div>
+			<div class="alert alert-info" th:if="${info != null}" th:text="${info}"></div>
+			
+			
+		</nav>
+
+		<br></br> <br></br> <br></br>
+	</header>
+	<div class="container"></div>
+
+	<footer th:fragment="footer" class="container"> 
+	<hr/>
+	<img alt="Spring Logo" th:src="@{/img/springboot.jpg}" class="img-circle" width="100" height="100" />
+	
+	<p>
+	powered by <a href="http://projects.spring,io/spring-boot/">Spring boot</a> y<a href="http://www.thymeleaf.org"> thymeleaf</a>
+	
+	</p>
+	<p>
+	 este   proyecto fue  desarrollado   en el IDE eclipse + Spring plugins (STS spring tools), Alumno  Jorge urueta <br/>
+	 &copy;company 2017,inc Todos  los derechos reservados .Terminos de  uso  y privacidad.<br/>
+	 
+	 <script th:src="@{/js/jquery-3.3.1.min.js}" ></script> 
+	 <script th:src="@{/js/bootstrap.min.js}" ></script>
+	 <script th:src="@{/js/jquery-ui.min.js}" ></script> 
+	
+	</p>
+	
+	
+	</footer>
+</body>
+</html>
